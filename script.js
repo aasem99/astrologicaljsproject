@@ -1,61 +1,43 @@
-/*function generateRandomNumber(num) {
-    // Gets # from 0 -> num - 1
-    return Math.floor(Math.random() * num)
-  }
-
-
-  //console.log(generateRandomNumber(5))
-
-
-const astrology = {
-
-}*/
-
-
 function generateRandomNumber(num) {
     // Gets # from 0 -> num - 1
     return Math.floor(Math.random() * num)
   }
-  
-  const collectiveWisdom = {
-    signInfo: ['star', 'moon', 'sun', 'comet'],
-    fortuneOutput: ['terrible luck', 'bad luck', 'ok luck', 'good luck', 'great luck'],
-    advice: ['go out and eat', 'not read this', 'play more', 'trust no one']
-  }
-  
-  // Store the 'wisdom' in an array
-  let personalWisdom = []
-  
-  // Iterate over the object
-  for(let prop in collectiveWisdom) {
-    let optionIdx = generateRandomNumber(collectiveWisdom[prop].length)
-  
-    // use the object's properties to customize the message being added to personalWisdom  
-    switch(prop) {
-      case 'signInfo':
-        personalWisdom.push(`Your sign right now is a "${collectiveWisdom[prop][optionIdx]}".`)
-        break
-      case 'fortuneOutput':
-        personalWisdom.push(`You are having: "${collectiveWisdom[prop][optionIdx]}".`)
-        break
-      case 'advice':
-        personalWisdom.push(`You should: "${collectiveWisdom[prop][optionIdx]}".`)
-        break
-      default:
-        personalWisdom.push('There is not enough info.')
+
+
+const your_daily_luck = {
+    sign: ['leo','cancer','vergo','scorpio','libra','gemini'],
+    todayluck:['not your day','great achievments','bad luck','unexpected surprise','normal day'],
+    advice:['enjoy the moment','try harder','forget the past','take care','love yourself']    
+}
+
+let uniqueWisdom = [];
+
+for(let prop in your_daily_luck){
+    let optionid = generateRandomNumber(your_daily_luck[prop].length)
+
+    switch(prop){
+        case 'sign':
+                    uniqueWisdom.push(`your sign is ${your_daily_luck[prop][optionid]}`)
+            break
+        case 'todayluck':
+                    uniqueWisdom.push(`your luck for today is ${your_daily_luck[prop][optionid]}`)
+            break
+        case 'advice':
+                    uniqueWisdom.push(`our adice for you is ${your_daily_luck[prop][optionid]}`)
+            break
+
+            default:
+                    uniqueWisdom.push("there is no info to show")
     }
-  }
-  
-  function formatWisdom(wisdom) {
-    // Add some ASCII here?
-    // Add in more symbols to the array? like emojies or what not?
-    const formatted = personalWisdom.join('\n')
-    console.log(formatted)
-  }
-  
-  formatWisdom(personalWisdom);
+}
 
 
+function finalresult (luck){
+    const result = uniqueWisdom.join('\n');
+    console.log(result);
+}
+
+finalresult(uniqueWisdom);
 
 
 
